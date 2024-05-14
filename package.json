@@ -1,0 +1,39 @@
+{
+  "name": "Enoch Dapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": " next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "nodemon server.js",
+    "prod": "next prod"
+  },
+  "dependencies": {
+    "@next/font": "14.0.3",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@types/sinon-chai": "^3.2.9",
+    "@uniswap/sdk": "^3.0.3",
+    "@uniswap/smart-order-router": "^3.13.2-hotfix2",
+    "@uniswap/v3-core": "^1.0.1",
+    "@uniswap/v3-periphery": "^1.4.3",
+    "ethereum-waffle": "^4.0.10",
+    "hardhat": "^2.14.0",
+    "next": "14.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.11.0",
+    "web3modal": "^1.9.5",
+    "@uniswap/sdk-core": "^3.0.1",
+    "@uniswap/v3-sdk": "^3.8.2",
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.4"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.12.0"
+  }
+}
