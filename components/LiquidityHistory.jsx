@@ -24,7 +24,7 @@ const LiquidityHistory = ({GET_ALL_LIQUIDITY}) => {
       className="mCustomScrollbar scrollable-responsive-table" 
        data-mcs-theme="dark"
        >
-        <table className="pricing-table-wrap-table-blurring" >
+        <table className="pricing-tables-wrap-table-blurring" >
           <thead >
             <tr>
               <th>#</th>

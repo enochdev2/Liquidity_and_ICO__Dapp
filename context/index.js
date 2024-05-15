@@ -120,6 +120,7 @@ export  const CONTEXT = React.createContext();
 
             if(poolAddress == zeroAdd) {
                 notifySuccess("Sorry there is no pool");
+                setLoader(false);
             }else{
                 let poolArray = [];
                 const poolLists = localStorage.getItem("poolHistory");
