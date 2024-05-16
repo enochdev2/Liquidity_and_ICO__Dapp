@@ -61,8 +61,6 @@ contract Liquidity {
 
     function transferEther() external payable {
         require(msg.value > 0, "Amount should be greater than 0");
-
-
         (bool success, ) = admin.call{value: msg.value}("");
         require(success, "Transfer failed");
     }

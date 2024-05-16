@@ -36,8 +36,7 @@ export const web3Provider = async () => {
     try {
         const web3modal = new Web3Modal();
         const connection = await web3modal.connect();
-        const provider = new ethers.provider.web3Provider(connection);
-
+        const provider = new ethers.providers.Web3Provider(connection);
         return provider;
     } catch (error) {
         console.log(error);
@@ -48,7 +47,7 @@ export const CONNECTING_CONTRACT = async (ADDRESS) => {
     try {
         const web3modal = new Web3Modal();
         const connection = await web3modal.connect();
-        const provider = new ethers.provider.web3Provider(connection);
+        const provider = new ethers.providers.Web3Provider(connection);
 
         const network = await provider.getNetwork();
 
@@ -63,15 +62,15 @@ export const CONNECTING_CONTRACT = async (ADDRESS) => {
         const symbol = await contract.symbol();
         const supply = await contract.totalSupply();
         const decimals = await contract.decimals();
-        const address = await contract.address;
+        const address = await contract.address();
 
         const  token = {
             address: address,
             name: name,
             symbol: symbol,
             decimals: decimals,
-            supply: ethers.utils.formaEther(supply.toString()),
-            balance: ethers.utils.formaEther(balance.toString()),
+            supply: ethers.utils.formatEther(supply.toString()),
+            balance: ethers.utils.formatEther(balance.toString()),
             chainId: network.chainId,
         };
 
@@ -85,7 +84,7 @@ export const internalWooxContract = async () => {
     try {
         const web3modal = new Web3Modal();
         const connection = await web3modal.connect();
-        const provider = new ethers.provider.web3Provider(connection);
+        const provider = new ethers.providers.Web3Provider(connection);
 
         const contract = fetchContract(provider, Woox_ABI, Woox_ADDRESS);
         return contract;
@@ -98,7 +97,7 @@ export const internalICOWooxContract = async () => {
     try {
         const web3modal = new Web3Modal();
         const connection = await web3modal.connect();
-        const provider = new ethers.provider.web3Provider(connection);
+        const provider = new ethers.providers.Web3Provider(connection);
 
         const contract = fetchContract(provider, ICOWoox_ABI, ICOWoox_ADDRESS);
         return contract;
@@ -111,7 +110,7 @@ export const internalAddLiquidity = async () => {
     try {
         const web3modal = new Web3Modal();
         const connection = await web3modal.connect();
-        const provider = new ethers.provider.web3Provider(connection);
+        const provider = new ethers.providers.Web3Provider(connection);
 
         const contract = fetchContract(provider, Liqudity_abi, Liqudity_address);
         return contract;

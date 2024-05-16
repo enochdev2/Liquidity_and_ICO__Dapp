@@ -62,7 +62,7 @@ export  const CONTEXT = React.createContext();
             notifyError("Sorry, you have No account");
         }
 
-        const provider = new ethers.provider.web3Provider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
         const network = await provider.getNetwork();
         setChainID(network.chainId);
     } catch (error) {

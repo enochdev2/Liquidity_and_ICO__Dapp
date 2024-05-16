@@ -4,22 +4,21 @@ pragma solidity ^0.8.0;
 contract Enoch {
 	string public name = 'Enoch'; 
 	string public symbol = "ENOCH";
-	string public standard = "Eno  v.0.1";
+	string public standard = "Eno v.0.1";
 	uint256 public totalSupply;
 	address public ownerOfContract;
     uint256 public _userId;
-    
 	address[] public holderToken;
+    
 
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
   
 	event Approval(
-        address indexed _owner, 
-        address indexed _spender, 
-        uint256 _value
-        );
+            address indexed _owner, 
+            address indexed _spender, 
+            uint256 _value
+    );
 
-	mapping(address => TokenHolderInfo) public tokenHolderInfos;
 
     struct TokenHolderInfo {
         uint256 _tokenId;
@@ -29,8 +28,10 @@ contract Enoch {
         bool _tokenHolder;
     }
 
+	mapping(address => TokenHolderInfo) public tokenHolderInfos;
 	mapping(address => uint256) public balanceOf;
 	mapping(address => mapping(address => uint256)) public allowance;
+    
 
 	constructor(uint256 _initialSupply) {
         ownerOfContract = msg.sender;
@@ -45,10 +46,8 @@ contract Enoch {
 	function transfer(address _to, uint256 _value) 
     public 
     returns (bool success) {
-
 		require(balanceOf[msg.sender] >= _value);
         inc();
-
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
 
@@ -67,6 +66,8 @@ contract Enoch {
 		return true;
 	}
 
+
+
 	function approve(address _spender, uint256 _value)
      public 
      returns (bool success) {
@@ -74,7 +75,6 @@ contract Enoch {
 		allowance[msg.sender][_spender] = _value;
 
 		emit Approval(msg.sender, _spender, _value);
-
 		return true;
 	}
 
@@ -82,7 +82,7 @@ contract Enoch {
         address _from, 
         address _to, 
         uint256 _value
-        ) public returns (bool success) {
+    ) public returns (bool success) {
 		require(_value <= balanceOf[_from]);
 		require(_value <= allowance[_from][msg.sender]);
 
@@ -92,7 +92,6 @@ contract Enoch {
         balanceOf[_to] += _value;
 
          emit Transfer(msg.sender, _to, _value);
-
 		return true;
 	}
 
