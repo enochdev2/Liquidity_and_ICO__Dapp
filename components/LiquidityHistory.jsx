@@ -21,7 +21,7 @@ const LiquidityHistory = ({GET_ALL_LIQUIDITY}) => {
   <div className="row medium-padding120">
     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div 
-      className="mCustomScrollbar scrollable-responsive-table" 
+      className="mCustomScrollbar scrollable-responsive-table overflow-y" 
        data-mcs-theme="dark"
        >
         <table className="pricing-tables-wrap-table-blurring" >

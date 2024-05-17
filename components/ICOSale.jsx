@@ -14,9 +14,9 @@ const ICOSale = ({ tokenSale, nativeToken, buyToken}) => {
     >
       <div className="container" id="buyWoox">
         <div className="row bg-2">
-          <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30"></div>
+          <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30">         
           <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
-           <img src="img/dots.png" className="responsive-dots mb30" alt="" />
+           <img src="img/dots.png" className="responsive-dots mb30" alt="image" />
              <h2 className="heading-title weight-normal"> 
              Hurry to invest 
              <span className="weight-bold"> in Cryptocurrency</span>
@@ -60,7 +60,7 @@ const ICOSale = ({ tokenSale, nativeToken, buyToken}) => {
               <img 
               src="img/nopool.png" 
               className="responsive-width-50"
-               alt="" 
+               alt="image" 
                />
             </div>
 
@@ -76,26 +76,53 @@ const ICOSale = ({ tokenSale, nativeToken, buyToken}) => {
                Buy Enoch Tokens
                </a>
 
+               <div className="crumina-module crumina-skill-item skills-item--bordered">
+                <div className="skills-item-info">
+                  <span className="skills-item-title">
+                    {tokenSale?.tokenSold}
 
+                    <span className="skills-item-count c-primary">
+                      <span className="count-animate"></span>
+                      <span className="units">
+                        Balance: {nativeToken?.tokenBalance}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                
+                <div className="skills-item-meter">
+                  <span 
+                  className="skills-item-meter-active bg-primary-color" 
+                  style={{width: `${percentage}%` }}
+                  ></span>
+                </div>
 
+                <span className="add-info">
+                  <span>
+                    <span className="c-link-color">Market Cap:</span>
+                    {tokenSale?.tokenPrice * tokenSale?.tokenSaleBalance}
+                    </span>
 
+                    <span className="c-link-color">Matic</span>
+                </span>
+               </div>
 
+               <div className="price-wrap">
+                <div className="token-price">
+                  Token Price:
+                  <div className="price-value">{tokenSale?.tokenPrice}</div>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-               
+                <div className="token-total">
+                  total {nativeToken?.tokenSymbol} Tokens:
+                  <div className="price-value">
+                    {tokenSale?.tokenSaleBalance}
+                  </div>
+                  </div>
+                </div>
+               </div>               
           </div>
         </div>
-
       </div>
     </section>
   )

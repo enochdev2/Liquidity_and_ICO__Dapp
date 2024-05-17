@@ -44,8 +44,8 @@ export  const CONTEXT = React.createContext();
    const [currentHolders, setCurrentHolders] = useState();
 
    //NOTIFICATION
-   const notifyError = (msg) => toast.error(msg, {duration: 400});
-   const notifySuccess = (msg) => toast.success(msg, {duration: 400});
+   const notifyError = (msg) => toast.error(msg, {duration: 1000});
+   const notifySuccess = (msg) => toast.success(msg, {duration: 1000});
 
    //  CONNECT WALLET
    const connect = async () => {
@@ -417,7 +417,7 @@ export  const CONTEXT = React.createContext();
             const PROVIDER = await web3Provider();
             const signer = PROVIDER.getSigner();
 
-            const TOKEN_SALE_ADDRESS = "0x";
+            const TOKEN_SALE_ADDRESS = "0x";//address of the ico contract
             const TOKEN_AMOUNT = 2000;
             const tokens = TOKEN_AMOUNT.toString();
             const transferAmount = ethers.utils.parseEther(tokens);
@@ -428,7 +428,7 @@ export  const CONTEXT = React.createContext();
 
 
             await transaction.wait();
-
+            setLoader(false);
             window.location.reload();
         } catch (error) {
             const errorMsg = parseErrorMsg(error);
