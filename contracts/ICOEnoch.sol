@@ -34,7 +34,7 @@ contract ICOEnoch {
 
      function endSale() public {
         require(msg.sender == admin);
-        require( 
+        require(
             tokenContract.transfer(
                 admin,
                 tokenContract.balanceOf(address(this))

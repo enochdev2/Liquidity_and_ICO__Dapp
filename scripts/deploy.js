@@ -6,7 +6,7 @@ const tokens = (nToken) => {
 
 async function main() {
     // Enoch
-  const _initialSupply = tokens(5000000000000);
+  const _initialSupply = tokens(500000000000);
   const Enoch = await hre.ethers.getContractFactory("Enoch")
   const contract = await Enoch.deploy(_initialSupply)
 
@@ -23,7 +23,7 @@ async function main() {
 
 // LIQUIDITY
 const Liquidity = await hre.ethers.getContractFactory("Liquidity")
-const liquidity = await Liquidity.deploy(contract.address, _tokenPrice)
+const liquidity = await Liquidity.deploy()
 
 await liquidity.deployed();
 console.log(`Liquidity: ${liquidity.address}`);

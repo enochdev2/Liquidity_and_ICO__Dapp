@@ -9,24 +9,24 @@ import Web3Modal from "web3modal";
 import factoryAbi from "./factoryAbi.json";
 import ERC20ABI from "./abi.json";
 
-import Woox from "./Woox.json";
-import ICOWoox from "./ICOWoox.json";
+import Enoch from "./Enoch.json";
+import ICOEnoch from "./ICOEnoch.json";
 import Liquidity from "./Liqudity.json";
 
 //TOKEN
-export const Woox_ADDRESS = "0x.......";
-export const Woox_ABI = Woox.abi;
+export const Enoch_Address = "0xfcE1fBC738a7DBB929e2e552203EC8D03a71D12c";
+export const Enoch_ABI = Enoch.abi;
 
 //TOKEN SALE
-export const ICOWoox_ADDRESS = "0x.......";
-export const ICOWoox_ABI = Woox.abi;
+export const ICOEnoch_ADDRESS = "0x03ce4db9Ee93167DE626CAE6B0F1657f3d1c7e4d";
+export const ICOEnoch_ABI = ICOEnoch.abi;
 //LIQUIDITY
-export const Liqudity_address = "0x.......";
-export const Liqudity_abi = Woox.abi;
+export const Liqudity_address = "0xf158a3bBa9d73c7F4ABC17c79a5F7590c5a9A0E4";
+export const Liqudity_abi = Liquidity.abi;
 
 export const FACTORY_ABI = factoryAbi;
-export const FACTORY_ADDRESS = "....k..";
-export const positionManagerAddress = "...y...";
+export const FACTORY_ADDRESS = "0x1F98431c8aD98523631AE4a59f267346ea31F984";
+export const positionManagerAddress = "0xC36442b4a4522E871399CD717aBDD847Ab11FE88";
 
 
 const fetchContract = (signer, ABI, ADDRESS) =>  new ethers.Contract(ADDRESS, ABI, signer);
@@ -86,7 +86,7 @@ export const internalWooxContract = async () => {
         const connection = await web3modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
 
-        const contract = fetchContract(provider, Woox_ABI, Woox_ADDRESS);
+        const contract = fetchContract(provider, Enoch_ABI, Enoch_Address);
         return contract;
     } catch (error) {
         console.log(error);
@@ -99,7 +99,7 @@ export const internalICOWooxContract = async () => {
         const connection = await web3modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
 
-        const contract = fetchContract(provider, ICOWoox_ABI, ICOWoox_ADDRESS);
+        const contract = fetchContract(provider, ICOWoox_ABI, ICOEnoch_ADDRESS);
         return contract;
     } catch (error) {
         console.log(error);

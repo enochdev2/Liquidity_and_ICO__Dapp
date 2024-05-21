@@ -12,7 +12,6 @@ contract Enoch {
     
 
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
-  
 	event Approval(
             address indexed _owner, 
             address indexed _spender, 
@@ -118,6 +117,6 @@ contract Enoch {
     function getTokenHolder() public view returns (address[] memory) {
         return holderToken;
     }   
-    }
+}
 
 

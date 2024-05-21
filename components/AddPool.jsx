@@ -27,7 +27,7 @@ const AddPool = ({
                 <NoPool/>
               ) : poolAddress ?  (
                 <SuccessPool poolAddress={poolAddress}/>
-              ) : (
+              ) : ( 
                 <PoolInput 
                 notifyError={notifyError}
                 notifySuccess={notifySuccess}

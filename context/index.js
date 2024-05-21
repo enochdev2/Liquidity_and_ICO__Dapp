@@ -321,7 +321,7 @@ export  const CONTEXT = React.createContext();
             const tokenStandard = await WOOX_TOKEN_CONTRACT.standard();
             const tokenHolders = await WOOX_TOKEN_CONTRACT._userId();
             const tokenOwnerOfContract = await WOOX_TOKEN_CONTRACT.ownerOfContract();
-            const tokenAddress = await WOOX_TOKEN_CONTRACT.address;
+            const tokenAddress = await WOOX_TOKEN_CONTRACT.address();
 
             const nativeToken  =  {
                 tokenAddress : tokenAddress,
@@ -395,7 +395,7 @@ export  const CONTEXT = React.createContext();
             const price = 0.0001 * nToken;
             const amount = ethers.utils.parseUnits(price.toString(), "ether");
 
-            const buying = await contract.connect(signer).buuToken(nToken, {
+            const buying = await contract.connect(signer).buyTokens(nToken, {
                 value: amount.toString(),
                 gasLimit: ethers.utils.hexlify(1000000)
             });

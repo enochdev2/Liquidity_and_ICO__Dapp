@@ -40,7 +40,7 @@ const PoolInput = ({
     }, [token_B]);
 
     const  CALLING_POOL_Add = async()=> {
-      if(!token_1 || !token2 || !fee) {
+      if(!token_1 || !token_2 || !fee) {
         return notifyError("Provide all details")
       } else {
         const pool = await GET_POOL_ADDRESS(token_1, token_2, fee);
