@@ -1,6 +1,6 @@
-// the three address
-// the three address
-// the three address
+// const Enoch_Address = "0xfcE1fBC738a7DBB929e2e552203EC8D03a71D12c"
+// const ICOEnoch_ADDRESS = "0x03ce4db9Ee93167DE626CAE6B0F1657f3d1c7e4d";
+// const Liqudity_address = "0xf158a3bBa9d73c7F4ABC17c79a5F7590c5a9A0E4";
 
 import {ethers} from "ethers";
 import Web3Modal from "web3modal";
@@ -99,7 +99,7 @@ export const internalICOWooxContract = async () => {
         const connection = await web3modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
 
-        const contract = fetchContract(provider, ICOWoox_ABI, ICOEnoch_ADDRESS);
+        const contract = fetchContract(provider, ICOEnoch_ABI, ICOEnoch_ADDRESS);
         return contract;
     } catch (error) {
         console.log(error);

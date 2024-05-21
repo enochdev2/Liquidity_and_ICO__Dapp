@@ -306,25 +306,25 @@ export  const CONTEXT = React.createContext();
             setAddress(account);
 
             //WOOX_TOKEN_CONTRACT
-            const WOOX_TOKEN_CONTRACT = await internalWooxContract();
+            const EnochContract = await internalWooxContract();
 
             let tokenBalance;
             if(account) {
-                tokenBalance = await WOOX_TOKEN_CONTRACT.balaceOf(account);
+                tokenBalance = await EnochContract.balanceOf(account);
             }else {
                 tokenBalance = 0;
             }
 
-            const tokenName = await WOOX_TOKEN_CONTRACT.name();
-            const tokenSymbol = await WOOX_TOKEN_CONTRACT.symbol();
-            const tokenTotalSupply = await WOOX_TOKEN_CONTRACT.totalSupply();
-            const tokenStandard = await WOOX_TOKEN_CONTRACT.standard();
-            const tokenHolders = await WOOX_TOKEN_CONTRACT._userId();
-            const tokenOwnerOfContract = await WOOX_TOKEN_CONTRACT.ownerOfContract();
-            const tokenAddress = await WOOX_TOKEN_CONTRACT.address();
+            const tokenName = await EnochContract.name();
+            const tokenSymbol = await EnochContract.symbol();
+            const tokenTotalSupply = await EnochContract.totalSupply();
+            const tokenStandard = await EnochContract.standard();
+            const tokenHolders = await EnochContract._userId();
+            const tokenOwnerOfContract = await EnochContract.ownerOfContract();
+            // const tokenAddress = await EnochContract.address();
 
             const nativeToken  =  {
-                tokenAddress : tokenAddress,
+                // tokenAddress : tokenAddress,
                 tokenName: tokenName,
                 tokenSymbol: tokenSymbol,
                 tokenOwnerOfContract: tokenOwnerOfContract,
@@ -336,12 +336,12 @@ export  const CONTEXT = React.createContext();
             setNativeToken(nativeToken);
 
             //GETTING TOKEN HOLDERS
-            const getTokenHolder = await WOOX_TOKEN_CONTRACT.getTokenHolder();
+            const getTokenHolder = await EnochContract.getTokenHolder();
             setTokenHolders(getTokenHolder);
 
             //GETTING TOKEN HOLDER DATA
             if(account) {
-                const getTokenHolderData = await WOOX_TOKEN_CONTRACT.getTokenHolderData(
+                const getTokenHolderData = await EnochContract.getTokenHolderData(
                     account
                 );
 
@@ -359,11 +359,11 @@ export  const CONTEXT = React.createContext();
 
             //TOKEN SALE CONTRACT
             const ICO_WOOX_CONTRACT = await internalICOWooxContract();
+            console.log("🚀 ~ fetchInitialData ~ ICO_WOOX_CONTRACT:", ICO_WOOX_CONTRACT)
             const tokenPrice = await ICO_WOOX_CONTRACT.tokenPrice();
             const tokenSold = await ICO_WOOX_CONTRACT.tokenSold();
-            const tokenSaleBalance = await WOOX_TOKEN_CONTRACT.balaceOf(
-                ""
-            );
+            const tokenSaleBalance = await EnochContract.balanceOf("0x03ce4db9Ee93167DE626CAE6B0F1657f3d1c7e4d");
+
 
             const tokenSale = {
                 tokenPrice: ethers.utils.formatEther(tokenPrice.toString()),
@@ -417,8 +417,8 @@ export  const CONTEXT = React.createContext();
             const PROVIDER = await web3Provider();
             const signer = PROVIDER.getSigner();
 
-            const TOKEN_SALE_ADDRESS = "0x";//address of the ico contract
-            const TOKEN_AMOUNT = 2000;
+            const TOKEN_SALE_ADDRESS = "0x03ce4db9Ee93167DE626CAE6B0F1657f3d1c7e4d";//address of the ico contract
+            const TOKEN_AMOUNT = 5000;
             const tokens = TOKEN_AMOUNT.toString();
             const transferAmount = ethers.utils.parseEther(tokens);
 
