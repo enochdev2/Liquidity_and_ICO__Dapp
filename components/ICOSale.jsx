@@ -54,7 +54,7 @@ const ICOSale = ({ tokenSale, nativeToken, buyToken}) => {
 
         <div className="col-lg-6 col-md-12 col-lg-offset-0 col-sm-12 col-xs-12">
           <div className="widget w-distribution-ends countdown-bg1">
-            <h5 className="title">Woox token for sale</h5>
+            <h5 className="title">Enoch token for sale</h5>
 
             <div className="new_center_img mt30">
               <img 

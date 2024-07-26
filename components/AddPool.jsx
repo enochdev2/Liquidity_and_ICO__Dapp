@@ -10,6 +10,7 @@ const AddPool = ({
   GET_POOL_ADDRESS
 }) => {
     const [poolAddress, setPoolAddress] = useState();
+    console.log("🚀 ~ poolAddress:", poolAddress)
 
     const [zeroAdd, setZeroAdd] = useState("0x000000000000000000000000000000000000")
   return (
@@ -19,7 +20,7 @@ const AddPool = ({
           <div className="new_addpool mb30">
             <div className="register-form form--dark">
               <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
-                <h2 className="heading-title"> Add Pool</h2> &nbsp; &nbsp; &nbsp; &nbsp; {""}
+                <h2 className="heading-title hover-cursor-pointer"> Add Pool</h2> &nbsp; &nbsp; &nbsp; &nbsp; {""}
                 <span onClick={()=> setOpenAddPool(false)}>X</span>
               </header>
 

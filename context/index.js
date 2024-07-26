@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import {Token} from "@uniswap/sdk-core";
 import { Pool, Position, nearestUsableTick} from "@uniswap/v3-sdk";
 import {abi as IUniswapV3PoolABI } from "@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json";
-import { INonfungiblePositionManagerABI } from "@uniswap/v3-periphery/artifacts/contracts/interfaces/INonfungiblePositionManager.sol/INonfungiblePositionManager.json";
+import {abi as INonfungiblePositionManagerABI } from "@uniswap/v3-periphery/artifacts/contracts/interfaces/INonfungiblePositionManager.sol/INonfungiblePositionManager.json";
 import ERC20ABI from "./abi.json";
 
 //INTERNAL IMPORT
@@ -116,7 +116,7 @@ export  const CONTEXT = React.createContext();
                 poolAddress: poolAddress,
             };
 
-            const zeroAdd = "0x0000000000000000000000000000";
+            const zeroAdd = "0x0000000000000000000000000000000";
 
             if(poolAddress == zeroAdd) {
                 notifySuccess("Sorry there is no pool");
@@ -359,7 +359,6 @@ export  const CONTEXT = React.createContext();
 
             //TOKEN SALE CONTRACT
             const ICO_WOOX_CONTRACT = await internalICOWooxContract();
-            console.log("🚀 ~ fetchInitialData ~ ICO_WOOX_CONTRACT:", ICO_WOOX_CONTRACT)
             const tokenPrice = await ICO_WOOX_CONTRACT.tokenPrice();
             const tokenSold = await ICO_WOOX_CONTRACT.tokenSold();
             const tokenSaleBalance = await EnochContract.balanceOf("0x03ce4db9Ee93167DE626CAE6B0F1657f3d1c7e4d");
@@ -392,7 +391,7 @@ export  const CONTEXT = React.createContext();
             const contract = await internalICOWooxContract();
             console.log(contract);
 
-            const price = 0.0001 * nToken;
+            const price = 0.001 * nToken;
             const amount = ethers.utils.parseUnits(price.toString(), "ether");
 
             const buying = await contract.connect(signer).buyTokens(nToken, {
