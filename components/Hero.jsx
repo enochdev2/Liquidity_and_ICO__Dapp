@@ -9,7 +9,7 @@ const Hero = () => {
 particles-js bg-1"
 >
   <div className="container">
-    <div className=" row medium-padding120 align-center">
+    <div className=" row handle medium-padding120 align-center z ">
       <div className="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
         <header className="crumina-module crunina-heading heading--h2 mb-3 heading--width-decoration mb-10 text-body-medium">
           <div className="heading-sup-title"> Coin Market</div>

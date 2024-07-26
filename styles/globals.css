@@ -10,6 +10,9 @@
   gap: 1rem;
 }
 
+.handle {
+  z-index: -1;
+}
 .new_addpool {
   width: 50%;
   margin: 0 auto;
