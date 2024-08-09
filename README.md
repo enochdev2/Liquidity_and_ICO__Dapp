@@ -37,11 +37,6 @@ All you need to follow the complete project and follow the instructions which ar
 
 #### Final Source Code
 
-```https://www.theblockchaincoders.com/SourceCode
-  Download the Final Source Code
-```
-
-```
 
 #### NodeJs & NPM Version
 
